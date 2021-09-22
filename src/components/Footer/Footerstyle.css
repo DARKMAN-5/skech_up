@@ -135,7 +135,7 @@
   border: 1.5px solid #009688;
 }
 
-.button1 {
+input[type=submit] {
   background: linear-gradient(
     101.12deg,
     #eb1484 27.35%,

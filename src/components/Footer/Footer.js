@@ -14,14 +14,21 @@ const Footer = () => {
             <a className="FooterLink" href="#">
               <strong>Get Latest Updates</strong>
             </a>
-            <div className="wrapper1">
-              <input
-                className="email"
-                placeholder="Your Email Id"
-                type="text"
-              />
-              <button className="button1">Email me!</button>
-            </div>
+            <form
+              action="mailto:someone@example.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <div className="wrapper1">
+                <input
+                  className="email"
+                  placeholder="Your Email Id"
+                  type="text"
+                  name="email"
+                />
+                <input type="submit" value="Email Me!" />
+              </div>
+            </form>
           </div>
           <div className="Column2">
             <div className="Column">
