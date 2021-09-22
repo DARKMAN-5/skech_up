@@ -1,0 +1,139 @@
+* {
+  color: white;
+}
+.mainBody {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: auto;
+  /* text-align: center; */
+  margin: 0% 10%;
+}
+
+.frontimg {
+  align-self: center;
+  margin: 5% 10%;
+  width: 80%;
+  height: 300px;
+  border-radius: 50px;
+}
+
+.middleBody {
+  margin: 5% 10%;
+  width: 80%;
+  height: auto;
+  border-radius: 50px;
+}
+
+.lowerBody {
+  margin: 5% 10%;
+  width: 80%;
+  height: auto;
+  border-radius: 50px;
+}
+
+.carousel {
+  padding-top: 5%;
+}
+
+.carousel > Carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.topsellerbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 20px 0px;
+  width: 80%;
+  border-radius: 10px;
+  /* height: auto;
+  width: 50%; */
+}
+
+.topsellerbox > img {
+  width: 60%;
+  border-radius: 50%;
+  padding: 1% 0%;
+}
+
+.topsellerbox > div {
+  padding: 1% 0%;
+}
+
+.Pointer {
+  align-self: left;
+  text-align: center;
+  background: linear-gradient(
+    101.12deg,
+    #eb1484 27.35%,
+    #c91cc3 99.99%,
+    #c81cc5 100%,
+    #c81cc5 100%
+  );
+  width: 15%;
+  border-radius: 50%;
+  margin-right: 70%;
+}
+
+.Bids {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 5%;
+}
+
+.Topbidsbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 10px 0px;
+  border-radius: 10px;
+  width: 20%;
+  margin: 1% 1%;
+}
+
+.Topbidsbox > img {
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  margin-bottom: 2%;
+}
+
+.Pointer1 {
+  margin-right: auto;
+  margin-left: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.Pointer2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 9px;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.Loadbutton {
+  width: 50%;
+  background-color: #2d2e36;
+  color: #da18a3;
+  border: 1px solid #da18a3;
+  border-radius: 10px;
+  padding: 1rem 5rem;
+  margin: 5% 25%;
+}
+
+.hidebutton {
+  display: none;
+}
