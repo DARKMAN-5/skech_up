@@ -1,7 +1,6 @@
-# Basic React Template
+# Sketch_Up
 
-1. Added Navbar
-2. Added Footer
+1. Added Home Page
 
 #
 
