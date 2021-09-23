@@ -17,7 +17,7 @@ const Footer = () => {
             <form
               action="mailto:someone@example.com"
               method="post"
-              enctype="text/plain"
+              encType="text/plain"
             >
               <div className="wrapper1">
                 <input

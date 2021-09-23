@@ -1,0 +1,12 @@
+* {
+  color: white;
+}
+.mainBody {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: auto;
+  /* text-align: center; */
+  margin: 0% 10%;
+}
