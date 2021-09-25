@@ -1,4 +1,4 @@
-import Profile from "./parag2.jpg";
+import Profile from "./img/parag2.jpg";
 
 export const Topsellerdata = [
   {

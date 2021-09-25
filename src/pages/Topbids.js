@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Topbidsdata } from "./Topbidsdata";
 
 class Topbids extends Component {
   constructor(props) {
@@ -14,7 +13,7 @@ class Topbids extends Component {
     return (
       <>
         <div className="Bids">
-          {Topbidsdata.slice(0, this.state.count).map((item, index) => {
+          {this.props.data.slice(0, this.state.count).map((item, index) => {
             return (
               <div key={"Topbidsbox" + index} className="Topbidsbox">
                 <img

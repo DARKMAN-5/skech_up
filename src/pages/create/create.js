@@ -20,7 +20,13 @@ class Create extends Component {
           <div className="form-ex">
             <label htmlFor="name">Name </label>
             <br />
-            <input type="text" name="name" id="name" required />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Item Name"
+            />
           </div>
           <br />
           <div className="form-ex">
@@ -31,13 +37,20 @@ class Create extends Component {
               name="description"
               id=""
               rows="10"
+              placeholder="Description of Your Item"
             ></textarea>
           </div>
           <br />
           <div className="form-ex">
             <label htmlFor="price">Price </label>
             <br />
-            <input type="text" name="name" id="name" required />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Enter Price"
+            />
           </div>
           <div className="form-ex1">
             <input type="submit" value="Create Item" />

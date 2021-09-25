@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./Body.css";
-import mainImage from "./1.jpg";
+import mainImage from "./img/1.jpg";
 import Carousel1 from "./Carousel1";
-import Topbids from "./Topbids";
+import Topbids from "../Topbids";
+import { Topbidsdata } from "./Topbidsdata";
 
 class Body extends Component {
   render() {
@@ -21,7 +22,7 @@ class Body extends Component {
           <h1>
             <strong>Hot Bids</strong>
           </h1>
-          <Topbids />
+          <Topbids data={Topbidsdata} />
         </div>
       </div>
     );
