@@ -7,6 +7,7 @@ import Login from "./pages/login/login";
 import Create from "./pages/create/create";
 import Profile from "./pages/profile/profile";
 import Sign from "./pages/login/signup";
+import itemde from "./pages/itemdetail";
 
 import {
   BrowserRouter as Router,
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/signup" component={Sign}></Route>
           <Route exact path="/create" component={Create}></Route>
           <Route exact path="/profile" component={Profile}></Route>
+          <Route exact path="/itemdetail" component={itemde}></Route>
           <Redirect to="/"></Redirect>
         </Switch>
 

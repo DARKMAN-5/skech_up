@@ -1,5 +1,10 @@
+ul {
+  margin-bottom: 0%;
+  width: 40%;
+}
+
 .NavbarItems {
-  height: 80px;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +16,7 @@
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
+  font-size: x-large;
 }
 
 .fa-react {
@@ -18,19 +24,18 @@
   font-size: 1.6rem;
 }
 
-.nav-menu {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
-  list-style: none;
-  text-align: center;
-  width: 40%;
-  justify-content: end;
-}
-
 .nav-links {
   text-decoration: none;
   color: #ffffff;
+}
+
+.nav-links:hover {
+  text-decoration: none;
+  color: #ff8cdc;
+}
+
+.nav-item {
+  padding: 0 2%;
 }
 
 .fa-bars {
@@ -48,15 +53,17 @@
 .button-1 {
   color: #ffffff;
   font-weight: bold;
+  width: auto;
 }
 
 .button-2 {
   color: #4f4f4f;
   font-weight: bold;
+  width: auto;
 }
 
 .button-3 {
-  margin-left: 100px;
+  width: auto;
   background: linear-gradient(
     101.12deg,
     #eb1484 27.35%,
@@ -67,84 +74,13 @@
   border-radius: 10px;
   padding: 0.5rem 2rem;
 }
+
 .button-4 {
+  width: auto;
   color: #da18a3;
   border: 1px solid #da18a3;
   border-radius: 10px;
   padding: 0.5rem 3rem;
-}
-
-@media screen and (max-width: 500px) {
-  .NavbarItems {
-    position: relative;
-  }
-
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 500px;
-    position: absolute;
-    top: 80px;
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5s ease;
-  }
-
-  .nav-menu.active {
-    background: #6668f4;
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-  }
-
-  .nav-links {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-    display: table;
-  }
-
-  .nav-links:hover {
-    background: #7577fa;
-    border-radius: 0;
-  }
-
-  .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%, 50%);
-  }
-
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-
-  .fa-times {
-    color: #fff;
-    font-size: 2rem;
-  }
-
-  .nav-links-mobile {
-    display: block;
-    text-align: center;
-    padding: 2rem;
-    margin: auto;
-    border-radius: 4px;
-    width: 80%;
-    background: #4ad9e4;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5rem;
-  }
 }
 
 .wrapper {
@@ -159,14 +95,13 @@
   color: #fff;
   border: 1px solid #000000;
   height: 40px;
-  width: 100%;
+  width: 90%;
   padding: 2px 30px 2px 40px;
   background-color: #1b1a21;
   border-radius: 10px;
 }
 
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
   opacity: 1; /* Firefox */
 }

@@ -4,6 +4,8 @@
 2. Added Connect Page
 3. Added Create Page
 4. Added My Item Page
+5. Added item detail page
+6. Added Modal
 
 #
 

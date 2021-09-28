@@ -56,7 +56,8 @@
 }
 
 .Userdescri {
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
   line-height: 2;
+  font-size: 0.8rem;
 }
