@@ -19,4 +19,9 @@ export const MenuItems = [
     url: "/login",
     cName: "nav-links button-4",
   },
+  {
+    title: "Logout",
+    url: "/",
+    cName: "nav-links button-4",
+  },
 ];

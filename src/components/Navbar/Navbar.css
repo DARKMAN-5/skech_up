@@ -125,3 +125,7 @@ ul {
   color: #fff;
   cursor: pointer;
 }
+
+.hidden-button {
+  display: none;
+}

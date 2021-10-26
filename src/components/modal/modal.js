@@ -13,7 +13,7 @@ export class Modal extends Component {
         <div
           className="modal fade"
           id="exampleModal"
-          tabindex="-1"
+          tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
@@ -95,7 +95,7 @@ export class Modal extends Component {
           id="exampleModalToggle2"
           aria-hidden="true"
           aria-labelledby="exampleModalToggleLabel2"
-          tabindex="-1"
+          tabIndex="-1"
         >
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content modal-bg">

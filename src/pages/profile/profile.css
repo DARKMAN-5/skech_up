@@ -61,3 +61,12 @@
   line-height: 2;
   font-size: 0.8rem;
 }
+
+.dropDown {
+  position: absolute;
+  right: 0;
+}
+
+.dropdown-menu {
+  min-width: 20rem;
+}

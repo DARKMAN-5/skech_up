@@ -20,7 +20,7 @@ class Topbids extends Component {
                 <Link
                   key={"Topbidsbox" + index}
                   className="Topbidsbox"
-                  to={{ pathname: "/itemdetail", props: item }}
+                  to={{ pathname: `/itemdetail/${index + 1}`, stateUse: item }}
                 >
                   <img
                     key={"im2" + index}
@@ -29,14 +29,14 @@ class Topbids extends Component {
                   ></img>
                   <div className="Pointer1" key={"Pointer1" + index}>
                     {" "}
-                    <strong> {item.title}</strong>{" "}
+                    <strong key={"strong1" + index}> {item.title}</strong>{" "}
                   </div>
                   <div className="Pointer2" key={"Pointer2" + index}>
                     <div>
                       {" "}
-                      <strong>{item.eth}</strong>
+                      <strong key={"strong2" + index}>{item.eth}</strong>
                     </div>
-                    <div key={item.eth + index}>{item.eth}</div>
+                    <div key={"item.eth" + index}>{item.eth}</div>
                   </div>
                 </Link>
               </>

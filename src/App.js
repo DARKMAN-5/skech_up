@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -7,7 +7,7 @@ import Login from "./pages/login/login";
 import Create from "./pages/create/create";
 import Profile from "./pages/profile/profile";
 import Sign from "./pages/login/signup";
-import itemde from "./pages/itemdetail";
+import Itemde from "./pages/itemdetail";
 
 import {
   BrowserRouter as Router,
@@ -17,18 +17,40 @@ import {
 } from "react-router-dom";
 
 function App() {
+  const [user, setUser] = useState({});
+
+  console.log(user);
+
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar isUser={user && user.email ? true : false} onSet={setUser} />
 
         <Switch>
-          <Route exact path="/" component={Body}></Route>
-          <Route exact path="/login" component={Login}></Route>
-          <Route exact path="/signup" component={Sign}></Route>
-          <Route exact path="/create" component={Create}></Route>
-          <Route exact path="/profile" component={Profile}></Route>
-          <Route exact path="/itemdetail" component={itemde}></Route>
+          <Route exact path="/">
+            <Body />
+          </Route>
+          <Route exact path="/itemdetail/:handle" component={Itemde}></Route>
+          {user && user.email ? (
+            <>
+              <Route path="/create">
+                <Create />
+              </Route>
+              <Route path="/profile">
+                <Profile />
+              </Route>
+            </>
+          ) : (
+            <>
+              <Route path="/login">
+                <Login onSet={setUser} />
+              </Route>
+              <Route path="/signup">
+                <Sign />
+              </Route>
+            </>
+          )}
+
           <Redirect to="/"></Redirect>
         </Switch>
 
