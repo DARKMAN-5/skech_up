@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
+import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 
 function Login(props) {
@@ -13,8 +14,32 @@ function Login(props) {
   function handleClick(event) {
     // console.log("clicked");
     event.preventDefault();
-    props.onSet(userinfo);
-    history.push("/");
+    var data = JSON.stringify({
+      email: userinfo.email,
+      password: userinfo.pswd,
+    });
+
+    var config = {
+      method: "post",
+      url: "http://localhost:3000/user/login",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        const { token } = response.data;
+        window.localStorage.setItem("token", token);
+        props.onSet(1);
+        history.push("/");
+      })
+      .catch(function (error) {
+        alert("Enter Correct Email/Password.");
+        console.log(error);
+      });
   }
 
   function Uinfo(event) {

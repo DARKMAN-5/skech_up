@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import formData from "form-data";
 import "./create.css";
 
 function Create() {
@@ -11,7 +13,35 @@ function Create() {
 
   function SubmitItem(event) {
     event.preventDefault();
-    console.log(inputitem);
+    const data = new formData();
+    data.append("image", inputitem.myImage);
+    data.append("name", inputitem.name);
+    data.append("description", inputitem.description);
+    data.append("price", inputitem.price);
+
+    var config = {
+      method: "post",
+      url: "http://localhost:3000/files/upload",
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        setInputitem({
+          myImage: null,
+          name: "",
+          description: "",
+          price: 0,
+        });
+        alert("Art is Submitted 🤩");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     // link to backend here
   }
 
@@ -62,6 +92,7 @@ function Create() {
             name="name"
             id="name"
             onChange={handleClick}
+            value={inputitem.name}
             required
             placeholder="Item Name"
           />
@@ -76,6 +107,7 @@ function Create() {
             id=""
             rows="10"
             onChange={handleClick}
+            value={inputitem.description}
             placeholder="Description of Your Item"
           ></textarea>
         </div>
@@ -88,6 +120,7 @@ function Create() {
             name="price"
             id="name"
             onChange={handleClick}
+            value={inputitem.price}
             required
             placeholder="Enter Price"
           />

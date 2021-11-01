@@ -11,6 +11,7 @@ class Topbids extends Component {
   }
 
   render() {
+    const address = "http://localhost:3000";
     return (
       <>
         <div className="Bids">
@@ -20,23 +21,26 @@ class Topbids extends Component {
                 <Link
                   key={"Topbidsbox" + index}
                   className="Topbidsbox"
-                  to={{ pathname: `/itemdetail/${index + 1}`, stateUse: item }}
+                  to={{
+                    pathname: `/itemdetail/${item._id}`,
+                    stateUse: this.props.data,
+                  }}
                 >
                   <img
                     key={"im2" + index}
-                    src={item.image}
-                    alt={item.title}
+                    src={address + item.path}
+                    alt={item.name}
                   ></img>
                   <div className="Pointer1" key={"Pointer1" + index}>
                     {" "}
-                    <strong key={"strong1" + index}> {item.title}</strong>{" "}
+                    <strong key={"strong1" + index}> {item.name}</strong>{" "}
                   </div>
                   <div className="Pointer2" key={"Pointer2" + index}>
                     <div>
                       {" "}
-                      <strong key={"strong2" + index}>{item.eth}</strong>
+                      <strong key={"strong2" + index}>{item.__v}</strong>
                     </div>
-                    <div key={"item.eth" + index}>{item.eth}</div>
+                    <div key={"item.eth" + index}>{item.__v}</div>
                   </div>
                 </Link>
               </>

@@ -3,9 +3,9 @@ import "./profile.css";
 import Topbids from "../Topbids";
 import bck from "./img1/bck.jpg";
 import bck2 from "../Body/img/parag2.jpg";
-import { Topbidsdata } from "../Body/Topbidsdata";
+// import { Topbidsdata } from "../Body/Topbidsdata";
 
-function Profile() {
+function Profile(props) {
   const [profile, setProfile] = useState(null);
 
   const [background, setBackground] = useState(null);
@@ -65,7 +65,7 @@ function Profile() {
                 />
                 <label
                   className="input-group-text"
-                  for="inputGroupFile02"
+                  htmlFor="inputGroupFile02"
                   style={{ color: "white", backgroundColor: " #c91cc3" }}
                   onClick={sendProfile}
                 >
@@ -76,13 +76,13 @@ function Profile() {
           </li>
           <li>
             <div className="dropdown-item">
-              <label htmlFor="uploaded_file">Upload Background Photo</label>
+              <label htmlFor="uploaded_file">Upload Short Self Introduce</label>
               <div
                 className="input-group input-group-sm mb-3"
                 style={{ border: "1px solid black", color: "white" }}
               >
-                <input
-                  type="file"
+                <textarea
+                  type="text"
                   name="bck"
                   className="form-control bg-dark"
                   aria-label="Sizing example input"
@@ -93,7 +93,7 @@ function Profile() {
                 />
                 <label
                   className="input-group-text"
-                  for="inputGroupFile02"
+                  htmlFor="inputGroupFile02"
                   style={{ color: "white", backgroundColor: " #c91cc3" }}
                   onClick={sendBckgrd}
                 >
@@ -113,7 +113,7 @@ function Profile() {
         </div>
 
         <div className="UserName">
-          <h1>Parag Thakre</h1>
+          <h1>{props.user.name}</h1>
           <p className="Userdescri">
             (Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
             voluptatibus aliquam corporis quae sint deserunt atque, magni
@@ -124,7 +124,7 @@ function Profile() {
         <div className="mainBody">
           <div className="lowerBody">
             <h2 id="h11">My Artwork</h2>
-            <Topbids data={Topbidsdata} />
+            <Topbids data={props.user.artworks} />
           </div>
         </div>
       </div>

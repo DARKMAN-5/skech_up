@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -8,7 +8,7 @@ import Create from "./pages/create/create";
 import Profile from "./pages/profile/profile";
 import Sign from "./pages/login/signup";
 import Itemde from "./pages/itemdetail";
-
+import axios from "axios";
 import {
   BrowserRouter as Router,
   Route,
@@ -17,9 +17,43 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [user, setUser] = useState({});
+  let [user, setUser] = useState();
+  let [art, setArt] = useState();
+  let [one, setOne] = useState(0);
+  useEffect(() => {
+    getValue();
+    // eslint-disable-next-line
+  }, [one]);
 
-  console.log(user);
+  useEffect(() => {
+    var config = {
+      method: "get",
+      url: "http://localhost:3000/files/collection",
+      headers: {},
+    };
+
+    const getItem = async () => {
+      const response = await axios(config);
+      setArt(response.data);
+    };
+    getItem();
+  }, []);
+
+  const getValue = async () => {
+    var config = {
+      method: "get",
+      url: "http://localhost:3000/user/me",
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+    };
+
+    console.log(config.headers);
+
+    const response = await axios(config);
+    setUser(response.data);
+    console.log(user);
+  };
 
   return (
     <Router>
@@ -28,22 +62,25 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <Body />
+            <Body art={art} />
           </Route>
-          <Route exact path="/itemdetail/:handle" component={Itemde}></Route>
+          {/* <Route exact path="/itemdetail/:handle" component={Itemde}></Route> */}
+          <Route exact path="/itemdetail/:handle">
+            <Itemde art={art} user={user} />
+          </Route>
           {user && user.email ? (
             <>
               <Route path="/create">
                 <Create />
               </Route>
               <Route path="/profile">
-                <Profile />
+                <Profile user={user} />
               </Route>
             </>
           ) : (
             <>
               <Route path="/login">
-                <Login onSet={setUser} />
+                <Login onSet={setOne} />
               </Route>
               <Route path="/signup">
                 <Sign />

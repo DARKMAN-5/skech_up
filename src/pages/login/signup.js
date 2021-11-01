@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./login.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Sign() {
   const [userName, setUserName] = useState("");
@@ -12,17 +13,41 @@ function Sign() {
     event.preventDefault();
     // alert("Signed Up.");
     const userDetail = {
-      userName: { userName },
-      email: { email },
-      pswd: { pswd },
-      repswd: { repswd },
+      name: userName,
+      email: email,
+      password: pswd,
     };
 
-    setUserName("");
-    setEmail("");
-    setPswd("");
-    setRepswd("");
-    console.log(userDetail);
+    var config = {
+      method: "post",
+      url: "http://localhost:3000/user/register",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: userDetail,
+    };
+
+    if (pswd === repswd) {
+      console.log(userDetail);
+
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+          alert("Registered");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      setUserName("");
+      setEmail("");
+      setPswd("");
+      setRepswd("");
+    } else {
+      alert("Enter Same Password.");
+      setPswd("");
+      setRepswd("");
+    }
+
     // link backend here
   }
 

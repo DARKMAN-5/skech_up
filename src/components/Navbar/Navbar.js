@@ -8,6 +8,7 @@ function Navbar(props) {
 
   function handleClick(event) {
     props.onSet({});
+    window.localStorage.clear();
     console.log("working");
   }
 

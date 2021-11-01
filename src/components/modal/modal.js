@@ -1,14 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import "./modal.css";
 
-export class Modal extends Component {
-  constructor(props) {
-    super(props);
-    this.state = this.props.data;
-  }
+const address = "http://localhost:3000";
 
-  render() {
-    return (
+function Modal(props) {
+  return (
+    <>
       <div>
         <div
           className="modal fade"
@@ -41,19 +38,19 @@ export class Modal extends Component {
                     <div className="col-md-9">
                       <img
                         className="modal-buy-img"
-                        src={this.state.image}
+                        src={address + props.data.path}
                         alt="art"
                       />
                       <div>
-                        <strong>{this.state.title}</strong>
+                        <strong>{props.data.name}</strong>
                       </div>
-                      <div>{this.state.title}</div>
+                      <div>{props.data.name}</div>
                     </div>
                     <div
                       className="col-md-3 ms-auto ml-auto"
                       style={{ textAlign: "right" }}
                     >
-                      {this.state.eth}
+                      {props.data.__v}
                     </div>
                   </div>
                   <div className="row modal-row1">
@@ -64,7 +61,7 @@ export class Modal extends Component {
                       className="col-md-3 ms-auto ml-auto"
                       style={{ textAlign: "right" }}
                     >
-                      {this.state.eth}
+                      {props.data.__v}
                     </div>
                   </div>
                 </div>
@@ -107,13 +104,13 @@ export class Modal extends Component {
               <div className="modal-body" style={{ textAlign: "center" }}>
                 <img
                   className="modal-buy-img1"
-                  src={this.state.image}
+                  src={address + props.data.path}
                   alt="art"
                   style={{ margin: "2% 0% 5%" }}
                 />
                 <div style={{ width: "70%", margin: "0 auto" }}>
-                  You Successfully purchased <strong>{this.state.title}</strong>{" "}
-                  form <strong>{this.state.title}</strong>.
+                  You Successfully purchased <strong>{props.data.name}</strong>{" "}
+                  form <strong>{props.userName}</strong>.
                 </div>
               </div>
               <div className="modal-footer">
@@ -131,8 +128,8 @@ export class Modal extends Component {
           </div>
         </div>
       </div>
-    );
-  }
+    </>
+  );
 }
 
 export default Modal;
