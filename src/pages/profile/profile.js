@@ -8,27 +8,27 @@ import bck2 from "../Body/img/parag2.jpg";
 function Profile(props) {
   const [profile, setProfile] = useState(null);
 
-  const [background, setBackground] = useState(null);
+  // const [background, setBackground] = useState(null);
 
   function sendProfile() {
     console.log(profile);
     // link to backend here
   }
 
-  function sendBckgrd() {
-    console.log(background);
-    // link to backend here
-  }
+  // function sendBckgrd() {
+  //   console.log(background);
+  //   // link to backend here
+  // }
 
   function profileChange(event) {
     const { files } = event.target;
     setProfile(files[0]);
   }
 
-  function bckgrdChange(event) {
-    const { files } = event.target;
-    setBackground(files[0]);
-  }
+  // function bckgrdChange(event) {
+  //   const { files } = event.target;
+  //   setBackground(files[0]);
+  // }
 
   return (
     <>
@@ -75,7 +75,7 @@ function Profile(props) {
             </div>
           </li>
           <li>
-            <div className="dropdown-item">
+            {/* <div className="dropdown-item">
               <label htmlFor="uploaded_file">Upload Short Self Introduce</label>
               <div
                 className="input-group input-group-sm mb-3"
@@ -100,7 +100,7 @@ function Profile(props) {
                   Upload
                 </label>
               </div>
-            </div>
+            </div> */}
           </li>
         </ul>
       </div>
@@ -114,12 +114,7 @@ function Profile(props) {
 
         <div className="UserName">
           <h1>{props.user.name}</h1>
-          <p className="Userdescri">
-            (Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-            voluptatibus aliquam corporis quae sint deserunt atque, magni
-            incidunt ut esse pariatur molestias rem recusandae excepturi
-            impedit, iure optio a repudiandae, suscipit dolorem.)
-          </p>
+          <p className="Userdescri">{props.user.bio}</p>
         </div>
         <div className="mainBody">
           <div className="lowerBody">

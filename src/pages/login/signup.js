@@ -8,6 +8,7 @@ function Sign() {
   const [email, setEmail] = useState("");
   const [pswd, setPswd] = useState("");
   const [repswd, setRepswd] = useState("");
+  const [bio, setBio] = useState("");
 
   function handleClick(event) {
     event.preventDefault();
@@ -16,6 +17,7 @@ function Sign() {
       name: userName,
       email: email,
       password: pswd,
+      bio: bio,
     };
 
     var config = {
@@ -42,6 +44,7 @@ function Sign() {
       setEmail("");
       setPswd("");
       setRepswd("");
+      setBio("");
     } else {
       alert("Enter Same Password.");
       setPswd("");
@@ -72,6 +75,12 @@ function Sign() {
   function Repswd(event) {
     let t = event.target.value;
     setRepswd(t);
+    // console.log(repswd);
+  }
+
+  function Bio(event) {
+    let t = event.target.value;
+    setBio(t);
     // console.log(repswd);
   }
 
@@ -130,6 +139,20 @@ function Sign() {
             value={repswd}
             required
           />
+
+          <div className="form-ex">
+            <label for="description">Description </label>
+            <br />
+            <textarea
+              className="decription-box"
+              name="description"
+              id=""
+              rows="5"
+              onChange={Bio}
+              value={bio}
+              placeholder="Add Your Bio"
+            ></textarea>
+          </div>
         </div>
         <div className="log-button-flex">
           <div className="form-ex3">
