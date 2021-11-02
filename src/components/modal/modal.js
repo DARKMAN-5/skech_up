@@ -50,7 +50,7 @@ function Modal(props) {
                       className="col-md-3 ms-auto ml-auto"
                       style={{ textAlign: "right" }}
                     >
-                      {props.data.__v}
+                      {props.data.price} INR
                     </div>
                   </div>
                   <div className="row modal-row1">
@@ -61,7 +61,7 @@ function Modal(props) {
                       className="col-md-3 ms-auto ml-auto"
                       style={{ textAlign: "right" }}
                     >
-                      {props.data.__v}
+                      {props.data.price} INR
                     </div>
                   </div>
                 </div>

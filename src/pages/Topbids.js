@@ -38,9 +38,9 @@ class Topbids extends Component {
                   <div className="Pointer2" key={"Pointer2" + index}>
                     <div>
                       {" "}
-                      <strong key={"strong2" + index}>{item.__v}</strong>
+                      <strong key={"strong2" + index}>{item.price} INR</strong>
                     </div>
-                    <div key={"item.eth" + index}>{item.__v}</div>
+                    <div key={"item.eth" + index}>{item.price} INR</div>
                   </div>
                 </Link>
               </>
